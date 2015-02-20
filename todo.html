@@ -8,9 +8,25 @@
   <title>To Do List</title>
 </head>
 <body>
-  <div class="container">
-    <h1 class="title">To Do List</h1>
+  <div class="list-area">
+    <h1 class="title">Make a to-do list</h1>
 
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Add a list:</h2>
+        <form id="new-list">
+          <div class="form-group">
+            <label for="new-list-name">List:</label>
+            <input type="text" class="form-control" id="new-list-name">
+          </div>
+
+          <button type="submit" class="btn">Add list</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  <div class="task-area">
+    <h1 class="title">Add tasks to the list: <span id="list-name"></span></h1>
     <div class="row">
       <div class="col-md-6">
         <h2>Add a task:</h2>
@@ -20,7 +36,7 @@
             <input type="text" class="form-control" id="new-task-name">
           </div>
 
-          <button type="submit" class="btn">Add</button>
+          <button type="submit" class="btn">Add tasks to your list</button>
         </form>
         </div>
       </div>
@@ -28,16 +44,16 @@
     <br>
     <br>
     <div id="listies">
-        <div class="list1">
-        <h2><u><b>Tasks to be completed:</b></u></h2>
+        <div class="lists">
+        <h2><u><b>Lists</b></u></h2>
         <br>
-          <ul id="tasks">
+          <ul id="list2">
           </ul>
         </div>
-        <div class="list2">
-        <h2><u><b>Tasks you have completed:</u></b></h2>
+        <div class="list1">
+        <h2><u><b>Tasks</u></b></h2>
         <br>
-          <ul id="completed-tasks">
+          <ul id="tasks">
 
           </ul>
         </div>

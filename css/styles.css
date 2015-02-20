@@ -1,4 +1,4 @@
-.container {
+.list-area {
   background-color: rgba(219, 255, 250, 0.75);
   width: 45%;
   height: 40%;
@@ -11,6 +11,24 @@
   padding-bottom: 20px;
   text-align: center;
 }
+
+.task-area {
+  background-color: rgba(219, 255, 250, 0.75);
+  width: 45%;
+  height: 40%;
+  border-radius: 25px;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 6%;
+
+  padding-top: 6px;
+  padding-bottom: 20px;
+  text-align: center;
+  display: none;
+}
+
+
+
 
 .task:hover {
   cursor: pointer;
@@ -51,7 +69,7 @@ body {
   display: inline-block;
 }
 
-.list1 {
+.lists {
   background-color: rgba(219, 255, 250, 0.75);
   border-radius: 20px;
   height: 400px;
@@ -66,7 +84,7 @@ body {
   text-align: center;
 }
 
-.list2 {
+.list1 {
   background-color: rgba(219, 255, 250, 0.75);
   border-radius: 20px;
   height: 400px;

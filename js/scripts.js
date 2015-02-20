@@ -1,22 +1,75 @@
+var List = {listName: "",
+tasks: []};
+var Task = {taskName: ""};
+
+
+
+
 $(document).ready(function() {
-  $("form#new-task").submit(function(event) {
+  var currentlist = null
 
-    var inputtedTask = $("input#new-task-name").val();
-    var newTask = {task: inputtedTask}
+  $("form#new-list").submit(function(event) {
+    event.preventDefault();
 
-    $("ul#tasks").append("<li class='task'>" + newTask.task + "</li>");
+    var inputtedListName = $("input#new-list-name").val();
 
-    $("input#new-task-name").val("");
+    var newList = Object.create(List);
+    newList.tasks = []
+    newList.listName = inputtedListName;
 
-    $("ul#tasks li.task").last().click(function() {
-      $('ul#completed-tasks').append($(this));
 
-      $('ul#completed-tasks li.task').last().click(function() {
-        $(this).remove();
-      });
+    $("ul#list2").append("<li class='list'>" + newList.listName + "</li>");
+
+
+
+    $("ul#list2 li.list").last().click(function() {
+      $("ul#tasks").empty();
+      $('.task-area').show();
+      currentlist = newList
+
+      $('#list-name').text(currentlist.listName);
+
+              currentlist.tasks.forEach(function(task) {
+                $("ul#tasks").append("<li class='task'>" + task.taskName + "</li>");
+              });
+
     });
 
 
-    event.preventDefault();
   });
+    $("form#new-task").submit(function(event) {
+      event.preventDefault();
+
+
+      var inputtedTask = $("input#new-task-name").val();
+      var newTask = Object.create(Task);
+
+      newTask.taskName = inputtedTask;
+      currentlist.tasks.push(newTask);
+
+      $("ul#tasks").append("<li class='task'>" + newTask.taskName + "</li>");
+
+debugger
+
+
+
+
+    //   lists.forEach(function(list) {
+    //     $("ul#tasks").empty();
+    //     list.tasks.forEach(function(task){
+    //       $("ul#tasks").append("<li class='task'>" + task.taskName + "</li>");
+    //     });
+    //   });
+    });
+
+
+    // $("ul#list2 li.list").last().click(function() {
+    //   $('.task-area').show();
+    // });
+
+
+    $("input#new-list-name").val("");
+
+
+
 });
