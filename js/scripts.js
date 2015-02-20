@@ -24,7 +24,7 @@ $(document).ready(function() {
 
     $("ul#list2 li.list").last().click(function() {
       $("ul#tasks").empty();
-      $('.task-area').show();
+      $('.task-area').show( "fold", 1000);
       currentlist = newList
 
       $('#list-name').text(currentlist.listName);
